@@ -1,0 +1,328 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3095881c40c83554aef76d65bb89f97c",
+    "packages": [
+        {
+            "name": "m1ome/phalcon-datatables",
+            "version": "1.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/m1ome/phalcon-datatables.git",
+                "reference": "dfa67667557cb8464b4917bfe2856adb3a0380e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/m1ome/phalcon-datatables/zipball/dfa67667557cb8464b4917bfe2856adb3a0380e4",
+                "reference": "dfa67667557cb8464b4917bfe2856adb3a0380e4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "crysalead/kahlan": "~1.1",
+                "fzaninotto/faker": "1.5.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev_master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DataTables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Makarenko",
+                    "email": "cryfall@gmail.com"
+                }
+            ],
+            "description": "DataTables adapter for Phalcon Framework",
+            "keywords": [
+                "datatables",
+                "phalcon",
+                "plugin"
+            ],
+            "time": "2015-11-27T10:13:36+00:00"
+        },
+        {
+            "name": "mattdanger/phalcon-table-sort",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mattdanger/phalcon-table-sort.git",
+                "reference": "5604f199211f868b7057e2d667637886e8fe8a1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mattdanger/phalcon-table-sort/zipball/5604f199211f868b7057e2d667637886e8fe8a1d",
+                "reference": "5604f199211f868b7057e2d667637886e8fe8a1d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TableSort\\": "src/TableSort"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt West",
+                    "email": "matt@mattdanger.net",
+                    "homepage": "http://mattdanger.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phalcon HTML table sort component",
+            "homepage": "https://github.com/mattdanger/phalcon-table-sort",
+            "keywords": [
+                "phalcon",
+                "php",
+                "sort"
+            ],
+            "time": "2016-03-03T00:49:38+00:00"
+        },
+        {
+            "name": "mattdanger/volt-helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mattdanger/volt-helpers.git",
+                "reference": "ba7524526243b2fc448a819b82fafb641eba7d4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mattdanger/volt-helpers/zipball/ba7524526243b2fc448a819b82fafb641eba7d4d",
+                "reference": "ba7524526243b2fc448a819b82fafb641eba7d4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VoltHelpers\\": "src/VoltHelpers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt West",
+                    "email": "matt@mattdanger.net",
+                    "homepage": "http://mattdanger.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Useful additions to the Volt template engine ",
+            "homepage": "https://github.com/mattdanger/volt-helpers",
+            "keywords": [
+                "phalcon",
+                "volt"
+            ],
+            "time": "2016-04-13T16:06:47+00:00"
+        },
+        {
+            "name": "phalcon-ext/mailer",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalcon-ext/mailer.git",
+                "reference": "bfd398f5d06bae2858f1733c402ea2f63dcab167"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalcon-ext/mailer/zipball/bfd398f5d06bae2858f1733c402ea2f63dcab167",
+                "reference": "bfd398f5d06bae2858f1733c402ea2f63dcab167",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "swiftmailer/swiftmailer": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phalcon\\Ext\\Mailer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Stanislav Kiryukhin",
+                    "email": "korsar.zn@gmail.com",
+                    "role": "Founder and project lead"
+                }
+            ],
+            "description": "Mailer component as wrapper over SwiftMailer for Phalcon.",
+            "keywords": [
+                "mailer",
+                "phalcon",
+                "phalcon-ext",
+                "phalcon-mailer"
+            ],
+            "time": "2017-09-30T12:18:44+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/181b89f18a90f8925ef805f950d47a7190e9b950",
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "https://swiftmailer.symfony.com",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "time": "2018-07-31T09:26:32+00:00"
+        },
+        {
+            "name": "yabacon/paystack-php",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yabacon/paystack-php.git",
+                "reference": "89d9db4f44dc08e123507bc7034380a9412dd10f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yabacon/paystack-php/zipball/89d9db4f44dc08e123507bc7034380a9412dd10f",
+                "reference": "89d9db4f44dc08e123507bc7034380a9412dd10f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.5|~7.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.2",
+                "phpunit/phpunit": "~5.3",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.3",
+                "vlucas/phpdotenv": "^2.2"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and trivial to integrate with web services. While not required by Paystack-PHP, installing it will provide you a more object-oriented experience. Also note that when Guzzle is installed, the result from API calls will be a GuzzleHttp\\Psr7\\Response Object"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yabacon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yabacon",
+                    "email": "yabacon.valley@gmail.com",
+                    "homepage": "https://github.com/yabacon",
+                    "role": "Owner"
+                },
+                {
+                    "name": "Ibrahim Lawal",
+                    "email": "ibrahim@lawal.me",
+                    "homepage": "http://ibrahim.lawal.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helps make your Paystack API calls giving a stdClass object.",
+            "homepage": "https://github.com/yabacon/paystack-php",
+            "keywords": [
+                "api",
+                "curl",
+                "customer",
+                "disable",
+                "enable",
+                "page",
+                "paystack",
+                "paystack-php",
+                "plan",
+                "subscription",
+                "transaction",
+                "verify",
+                "yabacon"
+            ],
+            "time": "2016-04-26T21:27:18+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "mattdanger/volt-helpers": 20,
+        "mattdanger/phalcon-table-sort": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
