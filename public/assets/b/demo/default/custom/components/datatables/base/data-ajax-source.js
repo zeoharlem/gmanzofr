@@ -73,10 +73,48 @@ var DatatablesDataSourceAjaxServer = function () {
         $('#m_form_status, #m_form_type').selectpicker();
     };
 
+    var handleDatableOrderRow   = function(){
+        var orderTableRow   = $('#orderTableRow').DataTable({
+            method: 'GET',
+            responsive: true,
+            searchDelay: 500,
+            processing: true,
+            pageSize: 20,
+            serverPaging: true,
+            serverFiltering: true,
+            serverSorting: true,
+            ajax: urlRowString+'/backend/order',
+            pagination: true,
+            search: {
+                input: $('#generalSearch'),
+            },
+
+            // columns definition
+            columns: [
+                {data: "order_id"},
+                {data: "trans_id"},
+                {data: "firstname"},
+                {data: "lastname"},
+                {data: "phonenumber"},
+                {data: "date_of_order"},
+                {data: "register_id"},
+                {data: "order_id"},
+            ],
+            columnDefs: [{
+                targets: -1,
+                data: "image",
+                render: function ( data, type, row, meta ) {
+                    return "<button class='btn btn-primary btn-sm'>View</button>";
+                }
+            }]
+        });
+    }
+
     return {
         // public functions
         init: function() {
             demo();
+            handleDatableOrderRow();
         },
     };
 }();

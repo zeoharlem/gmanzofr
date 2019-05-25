@@ -58,7 +58,7 @@ class ProductsController extends BaseController {
                     return;
                 }
                 else{
-                    $this->component->helper->getErrorMsgs($products, 'products');
+                    $this->component->helper->getErrorMsgs($products, 'backend/products');
                 }
             }
             elseif(number_format($file[0]->getSize()/1048576, 2) > 1){
