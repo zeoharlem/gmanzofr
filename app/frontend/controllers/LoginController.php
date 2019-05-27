@@ -23,7 +23,7 @@ class LoginController extends BaseController{
             if($getTaskQue != false){
                 if($this->security->checkHash($password, $getTaskQue->password)){
                     $this->__registerWithTaskSession($getTaskQue);
-                    $this->flash->success('Welcome !'.$getTaskQue->fullname);
+                    $this->flash->success('Welcome !'.$getTaskQue->firstname);
                     $this->response->redirect('dashboard/?token='.uniqid());
                     return;
                 }

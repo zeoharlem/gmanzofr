@@ -77,7 +77,7 @@
 (function($) {
     'use strict';
 
-    var stringVi    = 'gmanzofr';
+    var stringVi    = '';
     var urlPath     = window.location;
     var fullpath    = urlPath.protocol+'//'+urlPath.hostname+urlPath.pathname;
     var frontend    = urlPath.pathname.substring(0, urlPath.pathname.indexOf(stringVi)+stringVi.length);
@@ -1716,6 +1716,18 @@
             tr.addClass('shown');
         }
     });
+
+    //Show Password/Hide Password
+    $('#checkBoxRow').change(function(){
+        if($('#user-password').prop('type')=='password'){
+            $('#user-password').prop('type','text');
+            $('strong#showHide').text('Hide');
+        }
+        else{
+            $("#user-password").prop('type','password');
+            $('strong#showHide').text('Show');
+        }
+    })
     
     /* Formatting function for row details - modify as you need */
     function formatJsonString(d){

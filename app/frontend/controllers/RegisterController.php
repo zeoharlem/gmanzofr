@@ -26,7 +26,7 @@ class RegisterController extends BaseController{
         if($this->request->isPost()){
             $register   = new Register();
             $recaptcha  = $this->request->getPost("g-recaptcha-response");
-            //$secretKey  = '6Le910EUAAAAAKJGNwsrZ7htLxyIK-S6szoQhxhP';
+//            $secretKey  = '6Le910EUAAAAAKJGNwsrZ7htLxyIK-S6szoQhxhP';
             //Captcha Registered to Gmanzo
             $secretKey  = '6Lev2EEUAAAAACMbRWXnO1kRv2hKXunqClHvYhYY';
             $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".
@@ -35,15 +35,12 @@ class RegisterController extends BaseController{
             $getObject  = json_decode($request);
             
             if($getObject->success == true){
-            
                 if($register->create($this->request->getPost())){
                     $this->flash->success('Registration Done Successfully');
-                    $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_NO_RENDER);
                     $this->response->redirect('account/?token='.  uniqid());
                 }
                 else{
                     $this->component->helper->getErrorMsgs($register,'account/?error');
-                    $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_NO_RENDER);
                     return;
                 }
             }

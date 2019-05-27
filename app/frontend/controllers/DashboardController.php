@@ -121,15 +121,21 @@ class DashboardController extends BaseController{
     }
 
     private function __setTotalAmount($d = 0){
-        foreach($this->session->get('cart_item') as $key => $value){
-            $totalRow[] = (int)$value['price'] * $value['qty'];
+        $totalRow   = [];
+        if($this->session->has("cart_item")) {
+            foreach ($this->session->get('cart_item') as $key => $value) {
+                $totalRow[] = (int)$value['price'] * $value['qty'];
+            }
         }
         return number_format(array_sum($totalRow)+$d, 2);
     }
 
     private function __setIntTotalAmount($d = 0){
-        foreach($this->session->get('cart_item') as $key => $value){
-            $totalRow[] = (int)$value['price'] * $value['qty'];
+        $totalRow   = [];
+        if($this->session->has("cart_item")) {
+            foreach ($this->session->get('cart_item') as $key => $value) {
+                $totalRow[] = (int)$value['price'] * $value['qty'];
+            }
         }
         return array_sum($totalRow)+$d;
     }

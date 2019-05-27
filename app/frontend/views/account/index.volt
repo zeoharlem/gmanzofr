@@ -98,13 +98,16 @@
 
 
                                                     <p class="form-row form-row-wide">
-                                                            <label for="password">Password
+                                                            <label for="user-password">Password
                                                             <span class="required">*</span></label>
-                                                            <input type="password" autocomplete="off" class="input-text" name="password" id="password" />
+                                                            <input type="password" autocomplete="off" class="input-text" name="password" id="user-password" />
+                                                            <label for="checkBoxRow"><strong id="showHide">Show</strong></label>
+                                                            <input type="checkbox" class="pull-right" style="margin-top:-30px; margin-right:-20px;" name="checkBoxRow" id="checkBoxRow" />
                                                     </p>
                                                     
                                                             <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}">
                                                             <?php //echo \Multiple\Frontend\Recaptcha\Recaptcha::get('6LccIiQUAAAAAFsuiqaxMjzknreJ1ZScMI1tmUy3','',true); ?>
+                                                            <!--<div class="g-recaptcha form-row form-row-wide" data-sitekey="6Le910EUAAAAAIDw7edxMggQtjhdjdaGTSCbWVe6"></div>-->
                                                             <div class="g-recaptcha form-row form-row-wide" data-sitekey="6Lev2EEUAAAAAPYTKnvBZXHVglceGx-IPHpyDRQT"></div>
 
                                                     
