@@ -110,6 +110,7 @@ class DashboardController extends BaseController{
             $checkRef   = Sales::findFirstByTrans_id($reference);
             if($checkRef){
                 $message    = "Transaction Completed!";
+                $this->session->destroy();
             }
             else{
                 $message    = "Transaction Reference Not Found!";

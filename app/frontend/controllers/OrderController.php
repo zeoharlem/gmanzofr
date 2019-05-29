@@ -53,7 +53,7 @@ class OrderController extends BaseController{
                 $dateTimeRow    = date("Y-m-d H:i:s", strtotime($savedBillingTask["delivery_time"]));
                 //$tookanTime     = date("m/d/Y H:i:s", strtotime($this->request->getPost("delivery_time")));
                 $tookanTime     = date("Y-m-d H:i:s", strtotime($savedBillingTask["delivery_time"]));
-//                foreach($this->session->get("cart_item") as $keyRowTask => $valueRowTask){
+
                 $orderRowArray  = array(
                     "trans_id"      => $transId,
                     'delivery_time' => $dateTimeRow,
@@ -73,10 +73,19 @@ class OrderController extends BaseController{
                     'status'        => 'pending',
                     "vendor_id"     => $keyRowTask
                 );
+
+                //Check Whether the reference Already Existed;
+                $checkRef   = \Multiple\Frontend\Models\Order::findFirstByTrans_id($transId);
+                if($checkRef != false){
+                    $this->response->redirect("dashboard/?task=used_trans_id&r=".uniqid("xLm"));
+                    return $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
+                }
+
                 $returnType = $this->__createTaskRow($orderRowArray, $tookanTime);
                 $stackRowType[] = $returnType;
                 $jsonRowRaw     = json_decode($returnType);
                 $decoded        = json_decode(json_encode($jsonRowRaw->data), TRUE);
+
                 if($jsonRowRaw->status == self::ACTION_COMPLETE){
                     try{
                         $manager        = new \Phalcon\Mvc\Model\Transaction\Manager();
@@ -105,25 +114,17 @@ class OrderController extends BaseController{
                             "trans_id"          => $decoded['order_id'],
                             "job_hash"          => $decoded['job_hash'],
                         );
+
                         if(!$jobs->create($stackflow)){
                             $transaction->rollback("Job: ".implode(", ",$jobs->getMessages()));
                         }
                         $transaction->commit();
-                        $taskFixRow     = true;
+                        $this->response->redirect("dashboard/success?reference=".$transId);
                     }
                     catch (\Phalcon\Mvc\Model\Transaction\Failed $ex){
-                        //$this->flash->error("Reason: ".$ex->getMessage());
                         $getErrorMsg    = "Reason: ".$ex->getMessage();
-                        $taskFixRow     = FALSE;
+                        $this->response->redirect("dashboard/payfail?task=noKeysMatch&error=".$getErrorMsg);
                     }
-                }
-                //}
-                if($taskFixRow == false){
-                    return $this->response->redirect("dashboard/payfail?task=noKeysMatch&error=".$getErrorMsg);
-                }
-                else{
-                    $this->response->redirect("dashboard/success?reference=".$transId);
-                    return $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
                 }
             }
             else{
@@ -133,6 +134,7 @@ class OrderController extends BaseController{
         else{
             return $this->response->redirect("dashboard/payfail?task=norefenceKey&error=".$getErrorMsg);
         }
+        return $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
     }
 
     public function doAction(){

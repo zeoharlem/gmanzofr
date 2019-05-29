@@ -1601,27 +1601,40 @@
     
     $("#placeOrderBtn").click(function(e){
         e.preventDefault();
-        var submitRow   = {
-            firstname:  $("#billing_first_name").val(),
-            lastname:   $("#billing_last_name").val(),
-            email:      $("#billing_email").val(),
-            phonenumber: $("#billing_phone").val(),
-            country:    $("#billing_country").val(),
-            address:    $("#billing_address_1").val(),
-            amount:    $("#amountToPay").val(),
-            //city:       $("#billing_city").val(),
-            delivery_time: $("#billing_datetime_delivery").val(),
-            paymentMethod: $("input[name='payment_method']:checked").val(),
-            totalPayment:  $("#totalToPay").val()
-        };
-        $('#overlayDiv').fadeIn(300);
-        $.post(nBackend+'/order', submitRow, function(data){
-            var dataflow    = $.parseJSON(JSON.stringify(data));
-            $('#overlayDiv').fadeOut(300);
-            if(dataflow.reference.length){
-                window.location.href    = dataflow.authorization_url;
+
+        var isFormValid = true;
+        $('form#checkout_form input').each(function(){
+            if ($.trim($(this).val()).length == 0){
+                alert("Empty Field Found("+$(this).attr("name")+")");
+                isFormValid = false;
+                return false;
             }
-        })
+        });
+
+        if(isFormValid) {
+
+            var submitRow = {
+                firstname: $("#billing_first_name").val(),
+                lastname: $("#billing_last_name").val(),
+                email: $("#billing_email").val(),
+                phonenumber: $("#billing_phone").val(),
+                country: $("#billing_country").val(),
+                address: $("#billing_address_1").val(),
+                amount: $("#amountToPay").val(),
+                //city:       $("#billing_city").val(),
+                delivery_time: $("#billing_datetime_delivery").val(),
+                paymentMethod: $("input[name='payment_method']:checked").val(),
+                totalPayment: $("#totalToPay").val()
+            };
+            $('#overlayDiv').fadeIn(300);
+            $.post(nBackend + '/order', submitRow, function (data) {
+                var dataflow = $.parseJSON(JSON.stringify(data));
+                $('#overlayDiv').fadeOut(300);
+                if (dataflow.reference.length) {
+                    window.location.href = dataflow.authorization_url;
+                }
+            });
+        }
     });
     
     //Date Time Piacker

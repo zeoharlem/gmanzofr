@@ -1,7 +1,7 @@
 <article class="page type-page status-publish hentry">
 					<header class="entry-header"><h1 itemprop="name" class="entry-title">Checkout</h1></header><!-- .entry-header -->
 
-					<form enctype="multipart/form-data" action="#" class="checkout woocommerce-checkout" method="post" name="checkout">
+					<form class="checkout woocommerce-checkout" method="post" id="checkout_form" name="checkout">
 	<div id="customer_details" class="col2-set">
 		<div class="col-1">
 			<div class="woocommerce-billing-fields">
